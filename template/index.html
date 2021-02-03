@@ -6,83 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
     <title>ShopIn</title>
-    <style>
-        *{
-            padding:0;
-            margin:0;
-            box-sizing:border-box;
-        }
-        body{
-            background:linear-gradient(#9ba4b4,#d6d2c4,#f1f6f9,#ebebeb,#9ba4b4);
-            font-family:'Merriweather Sans',sans-serif;
-        }
-        .container{
-            padding-left:10%vw;
-            padding-right:10%vw;
-        }
-        .card{
-            background:#fff;
-            width:600px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            display:flex;   
-            margin:50px auto;
-            border-radius:10px;
-        }
-        .card__content{
-            /* background:yellowgreen; */
-            padding:50px 40px;
-        }
-        .card__title{
-            font-weight: 800;
-            color:#444;
-            font-size:35px;
-            margin-bottom:5px;
-        }
-        .card__subtitle{
-            font-size:15px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color:dimgrey;
-            margin-bottom:50px;
-        }
-        .card__description{
-            font-size:14px;
-            line-height: 1.5;
-            color:#788;
-            margin-bottom:50px;
-        }
-        .card__price{
-            font-size:35px;
-            color:#444;
-            font-weight: 800;
-            margin-left:80px;
-        }
-        .card__button{
-            display:inline-block;
-            background:rgb(243, 190, 190);
-            color:rgb(51, 2, 2);
-            text-decoration: none;
-            padding:20px;
-            margin-left:100px;
-            border-radius:5px;
-        }
-        .card__button:hover{
-            color:rgb(214, 130, 130)
-        }
-        .card__img-container{
-            overflow:hidden;
-            width:1000px;
-        }
-        .card__img{
-            height:100%;
-            border-radius:10px 0 0 10px;
-        }
-        .rating span{
-            color:#f0c04f;
-            margin: 0.1rem;
-        }
-    </style>
 </head>
 <body>
     <div class="grid-container">
@@ -96,7 +19,7 @@
         </div>
       </header>
       <content>
-            <div class="container row center">
+            <div class="row center">
                 <div class="card">
                     <div class="card__img-container">
                         <img class="card__img" src="https://picsum.photos/200/500" alt="">
@@ -117,27 +40,8 @@
                             <span><i class="fa fa-star"></i></span>
                         </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card__img-container">
-                        <img class="card__img" src="https://picsum.photos/200/500" alt="">
-                    </div>
-                    <div class="card__content">
-                        <h2 class="card__title">A cool product</h2>
-                        <p class="card__subtitle">that you should buy</p>
-                        <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                        <p class="card__price">$399.99</p>
-                        <a href="#" class="card__button">Buy now</a>
-                        <div class="rating" style="text-align: right;">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                        </div>
-                    </div>
-                </div>
+                </div>          
+                
                 <div class="card">
                     <div class="card__img-container">
                         <img class="card__img" src="https://picsum.photos/200/500" alt="">
@@ -158,7 +62,98 @@
                             <span><i class="fa fa-star"></i></span>
                         </div>
                     </div>
-                </div>      
+                </div> 
+
+                <div class="card">
+                    <div class="card__img-container">
+                        <img class="card__img" src="https://picsum.photos/200/500" alt="">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="card__title">A cool product</h2>
+                        <p class="card__subtitle">that you should buy</p>
+                        <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                        <p class="card__price">$399.99</p>
+                        <a href="#" class="card__button">Buy now</a>
+                        <div class="rating" style="text-align: right;">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="card">
+                    <div class="card__img-container">
+                        <img class="card__img" src="https://picsum.photos/200/500" alt="">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="card__title">A cool product</h2>
+                        <p class="card__subtitle">that you should buy</p>
+                        <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                        <p class="card__price">$399.99</p>
+                        <a href="#" class="card__button">Buy now</a>
+                        <div class="rating" style="text-align: right;">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="card">
+                    <div class="card__img-container">
+                        <img class="card__img" src="https://picsum.photos/200/500" alt="">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="card__title">A cool product</h2>
+                        <p class="card__subtitle">that you should buy</p>
+                        <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                        <p class="card__price">$399.99</p>
+                        <a href="#" class="card__button">Buy now</a>
+                        <div class="rating" style="text-align: right;">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </div>
+                    </div>
+                </div> 
+
+
+                <div class="card">
+                    <div class="card__img-container">
+                        <img class="card__img" src="https://picsum.photos/200/500" alt="">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="card__title">A cool product</h2>
+                        <p class="card__subtitle">that you should buy</p>
+                        <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                        <p class="card__price">$399.99</p>
+                        <a href="#" class="card__button">Buy now</a>
+                        <div class="rating" style="text-align: right;">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </div>
+                    </div>
+                </div> 
+
+
             </div>
     </content>
       <footer class="row center">&copy;ShopIn.Inc 2020</footer>
