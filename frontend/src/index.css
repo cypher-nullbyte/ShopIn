@@ -1,0 +1,142 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+
+html {
+    font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+    font-family: Helvetica, Arial, sans-serif;
+    background:linear-gradient(#9ba4b4,#d6d2c4,#f1f6f9,#ebebeb,#9ba4b4);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #root{
+    height:100%;
+  }
+  
+  /* Layout */
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'content'
+      'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+  }
+  header {
+    grid-area: header;
+    background-color: #394867;
+    position:sticky;
+    top:0;
+  }
+  content {
+    grid-area: content;
+    padding: 1rem;
+  }
+  footer {
+    grid-area: footer;
+    background-color: #394867;
+    color: #ffffff;
+  }
+  /* Common */
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #ff8000;
+  }
+  /* Header */
+  header a {
+    color: #ffffff;
+    padding: 1rem;
+  }
+  a.brand {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .row.center {
+    justify-content: center;
+  }
+
+  /* Card Designing */
+  /* ---------------------- */
+  .card{
+    background:#fff;
+    width:600px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display:flex;   
+    margin:50px auto;
+    border-radius:10px;
+}
+.card__content{
+    /* background:yellowgreen; */
+    padding:50px 40px;
+}
+.card__title{
+    font-weight: 800;
+    color:#444;
+    font-size:35px;
+    margin-bottom:5px;
+}
+.card__subtitle{
+    font-size:15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:dimgrey;
+    margin-bottom:50px;
+}
+.card__description{
+    font-size:14px;
+    line-height: 1.5;
+    color:#788;
+    margin-bottom:50px;
+}
+.card__price{
+    font-size:35px;
+    color:#444;
+    font-weight: 800;
+    margin-left:80px;
+}
+.card__button{
+    display:inline-block;
+    background:rgb(243, 190, 190);
+    color:rgb(51, 2, 2);
+    text-decoration: none;
+    padding:20px;
+    margin-left:100px;
+    border-radius:5px;
+}
+.card__button:hover{
+    color:rgb(214, 130, 130)
+}
+.card__img-container{
+    overflow:hidden;
+    width:1000px;
+}
+.card__img{
+    height:100%;
+    border-radius:10px 0 0 10px;
+}
+.rating span{
+    color:#f0c04f;
+    margin: 0.1rem;
+}
+/* ---------------------- */
