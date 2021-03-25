@@ -11,7 +11,7 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    Order.find({}).populate('User','name').
+    Order.find({}).populate('user','name').
     exec((err,orders)=>{
       if(!err) res.send(orders);
     });
@@ -102,6 +102,5 @@ orderRouter.put('/:id/deliver',isAuth,isAdmin,expressAsyncHandler(async(req,res)
     res.status(404).send({message:'Order Not Found'});
   }
 }));
-
 
 export default orderRouter;

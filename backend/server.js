@@ -11,7 +11,7 @@ dotenv.config();
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1/amazona',{useNewUrlParser:true, useUnifiedTopology:true,useCreateIndex:true});
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://127.0.0.1/shopin',{useNewUrlParser:true, useUnifiedTopology:true,useCreateIndex:true});
 
 app.use('/api/uploads',uploadRouter);
 app.use('/api/users',userRouter);
