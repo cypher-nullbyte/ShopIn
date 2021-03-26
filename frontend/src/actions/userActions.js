@@ -3,7 +3,7 @@ import { USER_DETAILS_FAIL, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_LIS
     USER_LIST_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, 
     USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNOUT, 
     USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS ,
-    USER_DELETE_REQUEST,USER_DELETE_SUCCESS,USER_DELETE_FAIL} from "../constants/userConstants"
+    USER_DELETE_REQUEST,USER_DELETE_SUCCESS,USER_DELETE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL} from "../constants/userConstants"
 
 export const signin=(email,password)=>async(dispatch)=>{
     dispatch({type:USER_SIGNIN_REQUEST,payload:{email,password}});
@@ -122,4 +122,24 @@ export const deleteUser=(userId)=>async(dispatch,getState)=>{
             ? err.response.data.message
             : err.message});
     }); 
+};
+
+
+export const updateUser=(user)=>async(dispatch,getState)=>{
+    dispatch({type:USER_UPDATE_REQUEST,payload:user});
+    const {userSignin:{userInfo}}=getState();
+    try{
+        const {data}=await axios.put(`/api/users/${user._id}`,user,{
+            headers:{
+                Authorization:`Bearer ${userInfo.token}`
+            }
+        });
+        dispatch({type:USER_UPDATE_SUCCESS,payload:data});
+    }
+    catch(err)
+    {
+        dispatch({type:USER_UPDATE_FAIL,payload:err.response && err.response.data.message 
+            ? err.response.data.message
+            : err.message});
+    }
 };
