@@ -3,11 +3,11 @@ import { PRODUCT_CREATE_FAIL, PRODUCT_CREATE_REQUEST, PRODUCT_CREATE_SUCCESS, PR
     PRODUCT_LIST_SUCCESS, PRODUCT_UPDATE_FAIL, PRODUCT_UPDATE_REQUEST, 
     PRODUCT_UPDATE_SUCCESS,PRODUCT_DELETE_REQUEST,PRODUCT_DELETE_FAIL,PRODUCT_DELETE_SUCCESS } from "../constants/productConstants"
 import axios from 'axios';
-export const listProducts=()=> async (dispatch)=>{
+export const listProducts=({seller=''})=> async (dispatch)=>{
     dispatch({
         type: PRODUCT_LIST_REQUEST
     });
-    axios.get('/api/products')
+    axios.get(`/api/products?seller=${seller}`)
     .then((res)=>
     {
         // console.log(res.data);
