@@ -103,7 +103,7 @@ export default function ProfileScreen()
                             onChange={e=>setConfirmPassword(e.target.value)}/>
                         </div>
                         {
-                            user.isSeller && (
+                            user&&user.isSeller && (
                                 <>
                                     <h2>Seller</h2>
                                     <div>
