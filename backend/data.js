@@ -9,6 +9,34 @@ const data = {
         isAdmin:true,
       },
       {
+        name:'Seller1',
+        email:'seller1@email.com',
+        password: bcrypt.hashSync('1234',8),
+        isSeller:true,
+        isAdmin:true,
+        seller:{
+          name:"Seller1"
+        },
+      },
+      {
+        name:'Seller2',
+        email:'seller2@email.com',
+        password: bcrypt.hashSync('1234',8),
+        isSeller:true,
+        seller:{
+          name:"Seller2"
+        },
+      },
+      {
+        name:'Seller3',
+        email:'seller3@email.com',
+        password: bcrypt.hashSync('1234',8),
+        isSeller:true,
+        seller:{
+          name:"Seller3"
+        },
+      },
+      {
         name:'Customer1',
         email:'customer1@email.com',
         password: bcrypt.hashSync('1234',8),
