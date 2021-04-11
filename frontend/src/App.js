@@ -110,7 +110,7 @@ function App() {
         </div>
       </header>
       <main>
-      <Route path="/seller/:id" component={SellerScreen}></Route>
+      <PrivateRoute path="/seller/:id" component={SellerScreen}></PrivateRoute>
       <Route path="/cart/:id?" component={CartScreen} /> 
       <Route path="/product/:id" component={ProductScreen} exact />
       <Route path="/product/:id/edit" component={ProductEditScreen} exact />

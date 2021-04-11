@@ -30,7 +30,7 @@ export default function SellerScreen(props) {
           <LoadingBox></LoadingBox>
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
+        ) : user&&(
           <ul className="card card-body">
             <li>
               <div className="row start">
