@@ -123,4 +123,24 @@ productRouter.delete(
   })
 );
 
+productRouter.post(
+  '/:id/reviews',
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+    if (product) {
+      const review={name:req.user.name,rating:Number(req.body.review.rating),comment:req.body.review.comment};
+      product.reviews.push(review);
+      product.numReviews=product.reviews.length;
+      product.rating=product.reviews.reduce((a,c)=>c.rating+a,0)/product.reviews.length;
+      const updatedReview = await product.save();
+      res.status(201).send({ message: 'Review Created!', review: updatedReview.reviews[updatedReview.reviews.length-1]});
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  })
+);
+
+
 export default productRouter;
