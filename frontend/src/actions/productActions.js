@@ -1,13 +1,13 @@
 import { PRODUCT_CREATE_FAIL, PRODUCT_CREATE_REQUEST, PRODUCT_CREATE_SUCCESS, PRODUCT_DETAILS_FAIL, 
     PRODUCT_DETAILS_REQUEST, PRODUCT_DETAILS_SUCCESS, PRODUCT_LIST_FAIL, PRODUCT_LIST_REQUEST, 
     PRODUCT_LIST_SUCCESS, PRODUCT_UPDATE_FAIL, PRODUCT_UPDATE_REQUEST, 
-    PRODUCT_UPDATE_SUCCESS,PRODUCT_DELETE_REQUEST,PRODUCT_DELETE_FAIL,PRODUCT_DELETE_SUCCESS } from "../constants/productConstants"
+    PRODUCT_UPDATE_SUCCESS,PRODUCT_DELETE_REQUEST,PRODUCT_DELETE_FAIL,PRODUCT_DELETE_SUCCESS, PRODUCT_CATEGORY_LIST_REQUEST, PRODUCT_CATEGORY_LIST_SUCCESS, PRODUCT_CATEGORY_LIST_FAIL } from "../constants/productConstants"
 import axios from 'axios';
-export const listProducts=({seller=''})=> async (dispatch)=>{
+export const listProducts=({seller='',name='',category='',min=0,max=0,rating=0,order=''})=> async (dispatch)=>{
     dispatch({
         type: PRODUCT_LIST_REQUEST
     });
-    axios.get(`/api/products?seller=${seller}`)
+    axios.get(`/api/products?seller=${seller}&name=${name}&category=${category}&min=${min}&max=${max}&rating=${rating}&order=${order}`)
     .then((res)=>
     {
         // console.log(res.data);
@@ -18,7 +18,21 @@ export const listProducts=({seller=''})=> async (dispatch)=>{
         dispatch({type:PRODUCT_LIST_FAIL,payload:err.message});
     });
 }
-
+export const listProductsCategories=()=> async (dispatch)=>{
+    dispatch({
+        type: PRODUCT_CATEGORY_LIST_REQUEST
+    });
+    axios.get(`/api/products/categories`)
+    .then((res)=>
+    {
+        // console.log(res.data);
+        dispatch({type:PRODUCT_CATEGORY_LIST_SUCCESS,payload:res.data});
+    })
+    .catch((err)=>
+    {
+        dispatch({type:PRODUCT_CATEGORY_LIST_FAIL,payload:err.message});
+    });
+}
 
 
 export const detailsProduct=(productId)=>async(dispatch)=>{
