@@ -29,6 +29,7 @@ import { listProductsCategories } from './actions/productActions';
 import LoadingBox from './components/LoadingBox';
 import MessageBox from './components/MessageBox';
 import SupportScreen from './screens/SupportScreen';
+import ChatBox from './components/ChatBox';
 function App() {
 
   const productCategoryList=useSelector(state=>state.productCategoryList);
@@ -176,7 +177,13 @@ function App() {
       <SellerRoute path="/productlist/seller" component={ProductListScreen}></SellerRoute>
       <SellerRoute path="/orderlist/seller" component={OrderListScreen}></SellerRoute>
       </main>
-      <footer className="row center">&copy;ShopIn.Inc</footer>
+
+      <footer className="row center">
+        {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
+        <div>
+          &copy;ShopIn.Inc
+        </div>
+      </footer>
     </div>
   </BrowserRouter>
   );
