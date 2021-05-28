@@ -28,6 +28,7 @@ import { useEffect, useState } from 'react';
 import { listProductsCategories } from './actions/productActions';
 import LoadingBox from './components/LoadingBox';
 import MessageBox from './components/MessageBox';
+import SupportScreen from './screens/SupportScreen';
 function App() {
 
   const productCategoryList=useSelector(state=>state.productCategoryList);
@@ -123,6 +124,9 @@ function App() {
                   <li>
                     <Link to="/userlist">Users</Link>
                   </li>
+                  <li>
+                    <Link to="/support">Support</Link>
+                  </li>
                 </ul>
               </div>
           }
@@ -167,6 +171,7 @@ function App() {
       <AdminRoute path="/orderlist"  exact component={OrderListScreen} />
       <AdminRoute path="/userlist" component={UserListScreen} />
       <AdminRoute path="/user/:id/edit" component={UserEditScreen} />
+      <AdminRoute path="/support" component={SupportScreen} />
       
       <SellerRoute path="/productlist/seller" component={ProductListScreen}></SellerRoute>
       <SellerRoute path="/orderlist/seller" component={OrderListScreen}></SellerRoute>

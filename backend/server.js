@@ -1,6 +1,6 @@
-import http from 'http';
-import SocketIO from 'socket.io';
+import { Server } from 'socket.io';
 import express from 'express';
+import { createServer } from 'http';
 import  mongoose from 'mongoose';
 import productRouter from './routers/productRouter.js';
 import userRouter  from './routers/userRouter.js';
@@ -31,8 +31,10 @@ app.get("/",(req,res)=>{
 
 const port=process.env.PORT || 5000;
 
-const httpServer=http.Server(app);
-const io=SocketIO(httpServer);
+const server = createServer(app); 
+const io = new Server(server);
+
+
 const users=[];
 
 io.on('connection',(socket)=>{
@@ -116,7 +118,7 @@ app.use((err,req,res,next)=>{
     res.status(500).send({message:err.message});
 });
 
-httpServer.listen(port,()=>{
+server.listen(port,()=>{
     console.log(`Server at http://localhost:${port}`);
 });
 
