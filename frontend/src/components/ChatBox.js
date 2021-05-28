@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
 import socketIOClient from 'socket.io-client';
 
 const ENDPOINT= window.location.host.indexOf('localhost') >=0
@@ -46,7 +45,7 @@ export default function ChatBox(props){
     };
 
     const submitHandler=(e)=>{
-        e.preventDefalut();
+        e.preventDefault();
         if (!messageBody.trim()){
             alert('No message to send!');
         }
@@ -72,14 +71,14 @@ export default function ChatBox(props){
         <div className="chatbox">
             {!isOpen ?(
                 <button type="button" onClick={supportHandler}>
-                    <i className="fa fa-support" />
+                    <i className="fa fa-comment" />
                 </button>
             ):
             (
                 <div className="card card-body">
                     <div className='row'>
                         <strong>Support</strong>
-                        <button type="button" onClick={closeHandler}>
+                        <button type="button" onClick={closeHandler} style={{backgroundColor:'#ffcccb'}}>
                             <i className="fa fa-close" />
                         </button>
                     </div>
